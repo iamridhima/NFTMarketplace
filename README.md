@@ -1,4 +1,8 @@
-## Foundry
+# NFT Marketplace Contract
+
+This is a simple NFT Marketplace contract where you can list your NFT in marketplace, and then people can buy it with designated price. Created using `Foundry` framework.
+
+This contract not included a royalty feature to the marketplace, further development can be done for this feature.
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
@@ -13,54 +17,86 @@ Foundry consists of:
 
 https://book.getfoundry.sh/
 
-## Usage
+# Getting Started
 
-### Build
+## Requirements
 
-```shell
-$ forge build
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - You'll know you did it right if you can run `git --version` and you see a response like `git version x.x.x`
+- [foundry](https://getfoundry.sh/)
+  - You'll know you did it right if you can run `forge --version` and you see a response like `forge 0.2.0 (816e00b 2023-03-16T00:05:26.396218Z)`
+
+## Quickstart
+
+```
+git clone https://github.com/KrisAdw/Simple-NFTMarketplace.git
+cd Simple-NFTMarketplace
+forge build
 ```
 
-### Test
+# Usage
 
-```shell
-$ forge test
+## Start a local node
+
+```
+make anvil
 ```
 
-### Format
+## Deploy
 
-```shell
-$ forge fmt
+This will default to your local node. You need to have it running in another terminal in order for it to deploy.
+
+### Deploy NFT
+```
+make deployNft
 ```
 
-### Gas Snapshots
+### Deploy Marketplace
+```
+make deployMarketplace
+```
+Other usage command can be find in Makefile 
 
-```shell
-$ forge snapshot
+## Testing
+
+```
+forge test
 ```
 
-### Anvil
+or
 
-```shell
-$ anvil
+```
+forge test --fork-url $SEPOLIA_RPC_URL
 ```
 
-### Deploy
+### Test Coverage
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
+```
+forge coverage
 ```
 
-### Cast
+## Estimate gas
 
-```shell
-$ cast <subcommand>
+You can estimate how much gas things cost by running:
+
+```
+forge snapshot
 ```
 
-### Help
+And you'll see an output file called `.gas-snapshot`
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+# Formatting
+
+To run code formatting:
+
 ```
+forge fmt
+```
+
+
+# Thank you!
+If you want to get contact on me, feel free to connect or follow me on:
+<br><br>
+[![Kris Adiwinata Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kris-adiwinata-726379214/)
+[![Kris Adiwinata Instagram](https://img.shields.io/badge/Instagram-FD1D1D?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/kris.adw/)
+[![Kris Adiwinata Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/regis_1269)
