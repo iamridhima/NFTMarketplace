@@ -47,7 +47,7 @@ contract BaseNftTest is Test {
         uint256 inisialCounter = 0;
         uint256 expectedInisialCounter = baseNft.getCounterToken();
         uint256 endingCounter = 1;
-        
+
         // Act
         vm.prank(USER);
         baseNft.mintNft(CLM);

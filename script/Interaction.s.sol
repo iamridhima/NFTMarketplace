@@ -8,20 +8,19 @@ import {NFTMarketplace} from "src/NFTMarketplace.sol";
 import {IERC721} from "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 // Constant Variables
-    string constant CLM = "ipfs://QmZxjP6aEEaPWDPcq3fhcETPR3a26f7MBKTNqdk1CD9M5J/01-CLM-Metadata.json";
-    address constant NFT_ADDRESS = 0x959549d3276A2f24C5d3D41fcfb5D287F2606B01;
-    uint256 constant PRICE = 1e18;
-    uint256 constant TOKEN_ID = 0;
+string constant CLM = "ipfs://QmZxjP6aEEaPWDPcq3fhcETPR3a26f7MBKTNqdk1CD9M5J/01-CLM-Metadata.json";
+address constant NFT_ADDRESS = 0x959549d3276A2f24C5d3D41fcfb5D287F2606B01;
+uint256 constant PRICE = 1e18;
+uint256 constant TOKEN_ID = 0;
 
 // NFT Contract
 contract MintNft is Script {
-
     function run() external {
         address mostRecentDeployment = DevOpsTools.get_most_recent_deployment("BaseNft", block.chainid);
         mintNftOnContract(mostRecentDeployment);
     }
 
-    function mintNftOnContract (address _contractAddress) public {
+    function mintNftOnContract(address _contractAddress) public {
         vm.startBroadcast();
         BaseNft(_contractAddress).mintNft(CLM);
         vm.stopBroadcast();
@@ -37,7 +36,7 @@ contract ListNft is Script {
         listingNftOnMarketplace(mostRecentDeployment);
     }
 
-    function listingNftOnMarketplace (address _contractAddress) public {
+    function listingNftOnMarketplace(address _contractAddress) public {
         vm.startBroadcast(ownerNft);
 
         // Approve NFT to be listed
@@ -55,7 +54,7 @@ contract PurchaseNft is Script {
         purchaseNftOnMarketplace(mostRecentDeployment);
     }
 
-    function purchaseNftOnMarketplace (address _contractAddress) public {
+    function purchaseNftOnMarketplace(address _contractAddress) public {
         vm.startBroadcast();
         NFTMarketplace(_contractAddress).purchaseNft(NFT_ADDRESS, TOKEN_ID);
         vm.stopBroadcast();
@@ -68,7 +67,7 @@ contract CancelListingNft is Script {
         cancelListingNftOnMarketplace(mostRecentDeployment);
     }
 
-    function cancelListingNftOnMarketplace (address _contractAddress) public {
+    function cancelListingNftOnMarketplace(address _contractAddress) public {
         vm.startBroadcast();
         NFTMarketplace(_contractAddress).cancelListingNft(NFT_ADDRESS, TOKEN_ID);
         vm.stopBroadcast();
@@ -81,7 +80,7 @@ contract GetListOfNft is Script {
         getListOfNftOnMarketplace(mostRecentDeployment);
     }
 
-    function getListOfNftOnMarketplace (address _contractAddress) public {
+    function getListOfNftOnMarketplace(address _contractAddress) public {
         vm.startBroadcast();
         NFTMarketplace(_contractAddress).getListingNft(NFT_ADDRESS, TOKEN_ID);
         vm.stopBroadcast();

@@ -167,8 +167,8 @@ contract NFTMarketplaceTest is Test {
         emit NFTMarketplace.NFTSold(address(baseNft), tokenId, address(buyer), price);
 
         // Assert: Check emit event
-        nftMarketplace.purchaseNft{value: price}(address(baseNft), tokenId); 
-        
+        nftMarketplace.purchaseNft{value: price}(address(baseNft), tokenId);
+
         vm.stopPrank();
     }
 
