@@ -1,11 +1,15 @@
+# Include environment variables from .env file
 -include .env
+
+# Define default values for variables
+ANVIL_LOCALHOST ?= /////
+ANVIL_KEY ?= //////
 
 build :; forge build
 
 test :; forge test
 
 anvil :; anvil -m 'test test test test test test test test test test test junk' --steps-tracing --block-time 1
-
 
 # Deploy Contracts (NFT)
 deployNft : 
