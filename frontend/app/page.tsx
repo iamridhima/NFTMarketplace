@@ -8,28 +8,28 @@ export default function Home() {
       name: "Digital Thangka #1",
       artist: "Aarati Thapa",
       price: "0.5 ETH",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/mandala painting.jpg?height=300&width=300",
     },
     {
       id: 2,
       name: "Woven Dhaka Pattern",
       artist: "Aarati Thapa",
       price: "0.3 ETH",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/mandala painting.jpg?height=300&width=300",
     },
     {
       id: 3,
       name: "Nepali Mandala",
       artist: "Aarati Thapa",
       price: "0.7 ETH",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/mandala painting.jpg?height=300&width=300",
     },
     {
       id: 4,
       name: "Digital Pashmina",
       artist: "Aarati Thapa",
       price: "0.4 ETH",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/images/mandala painting.jpg?height=300&width=300",
     },
   ];
 
