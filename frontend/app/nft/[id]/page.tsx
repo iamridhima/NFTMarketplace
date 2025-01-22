@@ -21,7 +21,7 @@ const nftData = {
   description:
     "A digital representation of traditional Thangka art, blending centuries-old techniques with modern digital craftsmanship.",
   price: "0.5 ETH",
-  image: "/placeholder.svg?height=500&width=500",
+  image: "/images/nepali thanka.jpg",
   ownershipHistory: [
     {
       owner: "Aarati Thapa",
