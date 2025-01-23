@@ -21,7 +21,7 @@ const nftData = {
   description:
     "A digital representation of traditional Thangka art, blending centuries-old techniques with modern digital craftsmanship.",
   price: "0.5 ETH",
-  image: "/images/nepali thanka.jpg",
+  image: "/placeholder.svg?height=500&width=500",
   ownershipHistory: [
     {
       owner: "Aarati Thapa",
@@ -56,7 +56,7 @@ export default function NFTDetail({ params }: { params: { id: string } }) {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-nepali-blue/5 to-nepali-red/5">
+    <div className="min-h-screen bg-gradient-to-b from-nepali-blue/5 to-nepali-red/5 font-serif">
       <div
         className="fixed inset-0 bg-cover bg-center opacity-15 pointer-events-none"
         style={{
@@ -70,7 +70,7 @@ export default function NFTDetail({ params }: { params: { id: string } }) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* NFT Image and Details */}
             <div className="space-y-6">
-              <Card className="p-6 bg-white/90 backdrop-blur-sm">
+              <Card className="p-6 bg-white/90 backdrop-blur-sm border border-nepali-gold/20">
                 <Image
                   src={nftData.image || "/placeholder.svg"}
                   alt={nftData.name}
@@ -92,7 +92,7 @@ export default function NFTDetail({ params }: { params: { id: string } }) {
                       {nftData.price}
                     </p>
                   </div>
-                  <Button className="bg-nepali-red hover:bg-nepali-red/90 text-white px-8 py-6 text-lg">
+                  <Button className="bg-nepali-red hover:bg-nepali-red/90 text-white px-8 py-3 text-lg">
                     Purchase NFT
                   </Button>
                 </div>
@@ -125,7 +125,7 @@ export default function NFTDetail({ params }: { params: { id: string } }) {
                     >
                       {/* Timeline line */}
                       {index !== nftData.ownershipHistory.length - 1 && (
-                        <div className="absolute left-[11px] top-6 bottom-0 w-0.5 bg-nepali-gold/30" />
+                        <div className="absolute left-[11px] top-6 bottom-0 w-0.5 bg-nepali-gold" />
                       )}
 
                       {/* Timeline dot */}
@@ -136,7 +136,7 @@ export default function NFTDetail({ params }: { params: { id: string } }) {
 
                       {/* Content */}
                       <Card
-                        className={`p-4 transition-all duration-300 ${
+                        className={`p-4 transition-all duration-300 border border-nepali-gold/20 ${
                           activeRecord === record
                             ? "bg-white shadow-lg transform -translate-y-1"
                             : "bg-white/80"
